@@ -11,3 +11,140 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  padding: 0 1rem;
+}
+
+.content {
+  min-height: calc(100vh - 70px - 64px);
+  padding: 1.5rem 0;
+}
+
+.goodsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.goodsList .card {
+  display: flex;
+  flex-direction: column;
+}
+.goodsList .card-content {
+  flex-grow: 1;
+}
+
+.goodsList .card-action {
+  display: flex;
+  align-items: center;
+}
+
+.goodsList .price {
+  font-size: 20px;
+  margin-left: auto;
+  font-weight: 500;
+}
+
+.cart {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px;
+  z-index: 5;
+  cursor: pointer;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .cart {
+    bottom: unset;
+    top: 80px;
+  }
+}
+
+.shop-basket {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  max-width: 95%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 10px 10px 10px rgb(0 0 0 / 12%);
+  animation: show 200ms ease-in;
+}
+
+.shop-basket .collection {
+  border: none;
+  margin: 0;
+}
+
+.shop-basket-overlay {
+  position: fixed;
+  z-index: 999;
+  top: -25%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 125%;
+  width: 100%;
+  background: #000;
+  will-change: opacity;
+  z-index: 4;
+  opacity: 0.5;
+}
+
+.basket-header {
+  display: flex;
+  align-items: center;
+}
+
+.basket-header .basket-close {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.basket-item-remove {
+  cursor: pointer;
+}
+
+.collection .basket-footer {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  border-bottom: none;
+}
+
+.basket-total-price {
+  margin-left: auto;
+}
+
+.basket-quantity {
+  font-size: 12px;
+  margin: 0 10px;
+  padding: 5px;
+  border: 1px solid #eee);
+  background: #eee;
+  border-radius: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#toast-container {
+  top: -35px !important;
+  left: 10px !important;
+  right: unset !important;
+  min-width: auto;
+}
+
+@keyframes show {
+  from {
+    top: 20%;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
