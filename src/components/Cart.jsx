@@ -1,5 +1,10 @@
-function Cart(props) {
-  const { quantity = 0, handleBasketToggle = Function.prototype } = props;
+import { useContext } from 'react';
+import { ShopContext } from '../context';
+
+function Cart() {
+  const { order, handleBasketToggle = Function.prototype } =
+    useContext(ShopContext);
+  const quantity = order.length;
 
   return (
     <div

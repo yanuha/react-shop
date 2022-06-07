@@ -133,6 +133,7 @@ nav {
 
 #toast-container {
   top: -35px !important;
+  bottom: unset !important;
   left: 10px !important;
   right: unset !important;
   min-width: auto;
